@@ -7,12 +7,15 @@
 """
 from __future__ import annotations
 
+import logging
 import threading
 from dataclasses import dataclass
 
 import numpy as np
 
 from ..config import ROOT, Settings
+
+log = logging.getLogger("yaqiz.engine")
 
 CANONICAL = {
     "helmet": "helmet", "hardhat": "helmet", "hard_hat": "helmet", "hard-hat": "helmet",
@@ -71,13 +74,58 @@ def suppress_nested(dets: list[Det], cls: str, frac: float = 0.6) -> list[Det]:
     return [d for i, d in enumerate(dets) if d.cls != cls or i in keep]
 
 
+def cuda_gpu_supported(torch) -> bool:  # noqa: ANN001
+    """True when the installed PyTorch build has kernels that run on NVIDIA GPU 0.
+
+    The CUDA 13 build that setup installs has no kernels for GPUs older than the GTX 16 / RTX 20 series.
+    On those GPUs torch.cuda.is_available() is still True, but every model call fails.
+    """
+    try:
+        major, minor = torch.cuda.get_device_capability(0)
+        archs = torch.cuda.get_arch_list()
+    except Exception:  # noqa: BLE001 - a GPU that cannot even be queried is not usable
+        return False
+    if not archs:
+        return True                   # the build does not say; let PyTorch try
+    cap = major * 10 + minor
+    for arch in archs:                # e.g. "sm_86", "sm_90a", "compute_90"
+        kind, _, num = arch.partition("_")
+        num = num.rstrip("abcdefghijklmnopqrstuvwxyz")
+        if not num.isdigit():
+            continue
+        n = int(num)
+        if kind == "sm" and n // 10 == major and n <= cap:
+            return True               # machine code for this GPU generation
+        if kind == "compute" and n <= cap:
+            return True               # PTX that the driver can compile for this GPU
+    return False
+
+
+_warned_unsupported_gpu = False
+
+
+def _warn_unsupported_gpu(torch) -> None:  # noqa: ANN001
+    global _warned_unsupported_gpu
+    if _warned_unsupported_gpu:
+        return
+    _warned_unsupported_gpu = True
+    try:
+        major, minor = torch.cuda.get_device_capability(0)
+        gpu = f"{torch.cuda.get_device_name(0)}, compute capability {major}.{minor}"
+    except Exception:  # noqa: BLE001
+        gpu = "GPU 0"
+    log.warning("this PyTorch build cannot run on the NVIDIA GPU (%s); using the CPU instead, which is slower", gpu)
+
+
 def pick_device(settings: Settings):  # noqa: ANN201
     if settings.device:
         return settings.device
     import torch
 
     if torch.cuda.is_available():
-        return 0                      # NVIDIA GPU (Windows / Linux)
+        if cuda_gpu_supported(torch):
+            return 0                  # NVIDIA GPU (Windows / Linux)
+        _warn_unsupported_gpu(torch)  # e.g. a GTX 10-series GPU: fall back below
     mps = getattr(torch.backends, "mps", None)
     if mps is not None and mps.is_available():
         return "mps"                  # Apple GPU (Mac with Apple Silicon)

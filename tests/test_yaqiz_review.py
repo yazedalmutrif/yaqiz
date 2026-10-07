@@ -217,9 +217,38 @@ def test_pick_device_prefers_cuda_then_apple_gpu_then_cpu(monkeypatch):
     from yaqiz.vision.engine import pick_device
     s = Settings()
     monkeypatch.setattr(torch.cuda, "is_available", lambda: True)
+    monkeypatch.setattr(torch.cuda, "get_device_capability", lambda i=0: (8, 9))   # RTX 40 series
+    monkeypatch.setattr(torch.cuda, "get_arch_list", lambda: ["sm_75", "sm_86", "sm_120"])
     assert pick_device(s) == 0
     monkeypatch.setattr(torch.cuda, "is_available", lambda: False)
     monkeypatch.setattr(torch.backends.mps, "is_available", lambda: True)
     assert pick_device(s) == "mps"
     monkeypatch.setattr(torch.backends.mps, "is_available", lambda: False)
     assert pick_device(s) == "cpu"
+
+
+def test_pick_device_falls_back_to_cpu_on_a_gpu_this_pytorch_build_cannot_run(monkeypatch):
+    """The CUDA 13 build (sm_75 to sm_120) has no kernels for GTX 10-series (6.1) or Volta (7.0) GPUs:
+    is_available() is True there, but every model call would fail, so Yaqiz must use the CPU."""
+    import torch
+
+    from yaqiz.vision.engine import pick_device
+    s = Settings()
+    monkeypatch.setattr(torch.cuda, "is_available", lambda: True)
+    monkeypatch.setattr(torch.cuda, "get_arch_list", lambda: ["sm_75", "sm_80", "sm_86", "sm_90", "sm_100", "sm_120"])
+    monkeypatch.setattr(torch.cuda, "get_device_name", lambda i=0: "Test GPU")
+    monkeypatch.setattr(torch.backends.mps, "is_available", lambda: False)
+    cases = {(8, 9): 0, (7, 5): 0, (8, 0): 0, (12, 0): 0, (10, 3): 0, (6, 1): "cpu", (7, 0): "cpu", (5, 2): "cpu"}
+    for cap, expected in cases.items():
+        monkeypatch.setattr(torch.cuda, "get_device_capability", lambda i=0, c=cap: c)
+        assert pick_device(s) == expected, cap
+    monkeypatch.setattr(torch.cuda, "get_arch_list", lambda: ["sm_90", "compute_90"])      # PTX: newer GPUs run
+    monkeypatch.setattr(torch.cuda, "get_device_capability", lambda i=0: (13, 0))
+    assert pick_device(s) == 0
+
+    def unqueryable(i=0):
+        raise RuntimeError("CUDA error: no kernel image is available for execution on the device")
+
+    monkeypatch.setattr(torch.cuda, "get_device_capability", unqueryable)
+    assert pick_device(s) == "cpu"
+    assert pick_device(Settings(device="cuda:0")) == "cuda:0"                            # an explicit setting wins

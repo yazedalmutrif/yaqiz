@@ -20,9 +20,19 @@ if not exist ".venv\Scripts\python.exe" (
 ".venv\Scripts\python.exe" -m pip install --upgrade pip
 echo Installing PyTorch for NVIDIA GPUs (about 3 GB). Without an NVIDIA GPU it still runs, but slowly.
 ".venv\Scripts\python.exe" -m pip install torch==2.14.1 torchvision==0.29.1 --index-url https://download.pytorch.org/whl/cu130
+if errorlevel 1 goto fail
 ".venv\Scripts\python.exe" -m pip install -r requirements.txt
+if errorlevel 1 goto fail
 ".venv\Scripts\python.exe" -m yaqiz seed --reset
+if errorlevel 1 goto fail
 echo.
 echo Setup finished. Double-click run_dashboard.bat to start Yaqiz.
 echo Demo clips are not included: see MEDIA_SOURCES.md, or add a webcam (source 0) on the Settings page.
 pause
+exit /b 0
+
+:fail
+echo.
+echo Setup did not finish (see the messages above). Check the internet connection and run this file again.
+pause
+exit /b 1

@@ -64,10 +64,12 @@ cd C:\Users\yazed\Projects\SiteSafety
 4. Double-click `run_dashboard.bat`. The dashboard opens at http://127.0.0.1:8000.
 5. Double-click `run_landing.bat`. The landing page opens at http://127.0.0.1:4180.
 
-**Requirements:** an NVIDIA GPU gives the real speed; without one, Yaqiz still runs, but slowly.
+If Windows shows "Windows protected your PC" when you open a `.bat` file from the downloaded zip, click **More info** → **Run anyway**. To avoid this, right-click the zip before unzipping it → **Properties** → tick **Unblock** → **OK**.
+
+**Requirements:** for the real speed, an NVIDIA GPU from the GTX 16 or RTX 20 series or newer, with NVIDIA driver 580 or newer (update the driver from nvidia.com if it is older). Without such a GPU, Yaqiz runs on the processor, which works but is slow. This includes older NVIDIA GPUs (GTX 10 series, MX150–MX350 and earlier), which the PyTorch version Yaqiz uses does not support.
 
 **Demo clips are not included.** Either:
-- download them by hand from the Pexels links in `MEDIA_SOURCES.md` into `data\videos\`, then run `.venv\Scripts\python -m yaqiz seed --reset`; or
+- download them by hand from the Pexels links in `MEDIA_SOURCES.md` and save them in a new folder `data\videos\` inside the project folder, named exactly `pexels_11798561.mp4`, `pexels_35631533.mp4` and `pexels_5434223.mp4`. Then close the dashboard window, open a terminal in the project folder (on Windows 11: right-click inside the folder → **Open in Terminal**), run `.venv\Scripts\python -m yaqiz seed --reset`, and start `run_dashboard.bat` again; or
 - add a webcam (source `0`) or a phone camera on the Settings page.
 
 ## Run it on a Mac
@@ -83,7 +85,7 @@ cd C:\Users\yazed\Projects\SiteSafety
 
 The `.command` files can also be opened with a double-click. macOS blocks downloaded scripts the first time; allow them in System Settings → Privacy & Security → "Open Anyway", or run `xattr -dr com.apple.quarantine .` once in the folder.
 
-**Demo clips are not included** (see `MEDIA_SOURCES.md`). You can also add the Mac's camera (source `0`) on the Settings page.
+**Demo clips are not included.** Download them by hand from the Pexels links in `MEDIA_SOURCES.md` and save them in a new folder `data/videos/` inside the project folder, named exactly `pexels_11798561.mp4`, `pexels_35631533.mp4` and `pexels_5434223.mp4`. Then stop the dashboard (Control-C in its Terminal window) and, in Terminal in the project folder, run `.venv/bin/python -m yaqiz seed --reset` and then `bash run_dashboard.command`. You can also add the Mac's camera (source `0`) on the Settings page.
 
 ## Measured results
 

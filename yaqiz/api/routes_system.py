@@ -20,7 +20,9 @@ def _gpu_name() -> str | None:
     try:
         import torch
 
-        if torch.cuda.is_available():
+        from ..vision.engine import cuda_gpu_supported
+
+        if torch.cuda.is_available() and cuda_gpu_supported(torch):
             return torch.cuda.get_device_name(0)
         mps = getattr(torch.backends, "mps", None)
         return "Apple GPU (MPS)" if mps is not None and mps.is_available() else None
