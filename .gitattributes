@@ -1,0 +1,12 @@
+# Line endings per platform (also applied to GitHub's Download ZIP)
+*.bat      text eol=crlf
+*.command  text eol=lf
+*.sh       text eol=lf
+
+# Binary files
+*.pt       binary
+*.mp3      binary
+*.png      binary
+*.webp     binary
+*.woff     binary
+*.woff2    binary
