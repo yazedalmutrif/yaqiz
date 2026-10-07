@@ -1,0 +1,47 @@
+{
+  "weights": "models/ppe_v2.pt",
+  "det_conf": 0.35,
+  "imgsz": 960,
+  "machine_gap": 1.0,
+  "worker_photo_test_sets": {
+    "hardhat_xie": {
+      "images": 1766,
+      "images_with_machinery_box": 17,
+      "machinery_boxes": 18
+    },
+    "gdut_hwd": {
+      "images": 500,
+      "images_with_machinery_box": 3,
+      "machinery_boxes": 3
+    },
+    "chvg": {
+      "images": 255,
+      "images_with_machinery_box": 6,
+      "machinery_boxes": 6
+    },
+    "rf100_construction_safety": {
+      "images": 90,
+      "images_with_machinery_box": 4,
+      "machinery_boxes": 4
+    },
+    "cppe_test": {
+      "images": 141,
+      "images_with_machinery_box": 0,
+      "machinery_boxes": 0
+    }
+  },
+  "machine_test_sets": {
+    "rf100_excavators": {
+      "images": 96,
+      "images_with_person_and_machine": 4,
+      "persons_near": 0,
+      "persons_not_near": 4
+    },
+    "kr_site_machinery": {
+      "images": 566,
+      "images_with_person_and_machine": 57,
+      "persons_near": 38,
+      "persons_not_near": 24
+    }
+  }
+}

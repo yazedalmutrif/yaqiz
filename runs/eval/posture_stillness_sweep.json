@@ -1,0 +1,74 @@
+{
+  "generated_utc": "2026-10-07T10:43:03.055346+00:00",
+  "subjects": "Subject 1,Subject 2",
+  "posture_hold_s": 0.5,
+  "man_down_s": 5.0,
+  "results": {
+    "0.08": {
+      "eligible_falls": 6,
+      "alert_on_eligible": 1,
+      "adl_clips": 39,
+      "adl_minutes": 5.9,
+      "adl_false_alerts": 0,
+      "false_alert_activities": {}
+    },
+    "0.10": {
+      "eligible_falls": 6,
+      "alert_on_eligible": 1,
+      "adl_clips": 39,
+      "adl_minutes": 5.9,
+      "adl_false_alerts": 0,
+      "false_alert_activities": {}
+    },
+    "0.12": {
+      "eligible_falls": 6,
+      "alert_on_eligible": 1,
+      "adl_clips": 39,
+      "adl_minutes": 5.9,
+      "adl_false_alerts": 1,
+      "false_alert_activities": {
+        "Sitting": 1
+      }
+    },
+    "0.15": {
+      "eligible_falls": 6,
+      "alert_on_eligible": 1,
+      "adl_clips": 39,
+      "adl_minutes": 5.9,
+      "adl_false_alerts": 1,
+      "false_alert_activities": {
+        "Sitting": 1
+      }
+    },
+    "0.18": {
+      "eligible_falls": 6,
+      "alert_on_eligible": 2,
+      "adl_clips": 39,
+      "adl_minutes": 5.9,
+      "adl_false_alerts": 1,
+      "false_alert_activities": {
+        "Exercising": 1
+      }
+    },
+    "0.20": {
+      "eligible_falls": 6,
+      "alert_on_eligible": 2,
+      "adl_clips": 39,
+      "adl_minutes": 5.9,
+      "adl_false_alerts": 1,
+      "false_alert_activities": {
+        "Exercising": 1
+      }
+    },
+    "0.25": {
+      "eligible_falls": 6,
+      "alert_on_eligible": 2,
+      "adl_clips": 39,
+      "adl_minutes": 5.9,
+      "adl_false_alerts": 1,
+      "false_alert_activities": {
+        "Exercising": 1
+      }
+    }
+  }
+}

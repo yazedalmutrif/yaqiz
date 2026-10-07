@@ -1,0 +1,8 @@
+# Danger zone for Pexels clip 11798561 (static camera, workers on an upper slab).
+# Points are normalised (x, y) in 0..1 of the frame. The band covers the deck
+# strip where the workers' feet are, on the east side next to the column bars.
+clip: pexels_11798561.mp4
+zones:
+  - name: "Slab edge (east)"
+    rule: no_entry
+    points: [[0.585, 0.37], [0.995, 0.37], [0.995, 0.47], [0.585, 0.47]]

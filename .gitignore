@@ -1,0 +1,37 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Node
+node_modules/
+
+# Secrets (none used yet; keep it that way)
+.env
+*.env
+
+# Large / regenerable artefacts (datasets, event log, snapshots, stock clips)
+data/
+weights/
+.ultralytics/
+*.mp4
+*.tmp
+
+# Results: keep only the small result files that docs/DATA.md cites
+runs/*
+!runs/ppe_v2_metrics.json
+!runs/eval/
+runs/eval/*
+!runs/eval/*.json
+!runs/eval/*.csv
+
+# Model weights: the four the system loads are committed (each < 20 MB); other .pt files stay out
+*.pt
+!models/ppe_v2.pt
+!models/ppe_yolo11s_best.pt
+!models/yolo11s.pt
+!models/yolo11s-pose.pt
+
+# Keep the curated screenshots
+!docs/screenshots/*.png

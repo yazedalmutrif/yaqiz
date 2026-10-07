@@ -1,0 +1,99 @@
+{
+  "generated_utc": "2026-10-07T05:15:30.577788+00:00",
+  "dataset": "GMDCSA-24 v2.1 (Alam et al. 2024; CC BY 4.0 on Zenodo, MIT LICENSE file in the repository): indoor, 4 subjects, one person per clip",
+  "excluded_clips": [
+    "GMDCSA24/Subject 4/Fall/09.mp4",
+    "GMDCSA24/Subject 4/Fall/15.mp4"
+  ],
+  "pipeline": {
+    "person_model": "yolo11s.pt",
+    "pose_model": "yolo11s-pose.pt",
+    "imgsz": 960,
+    "pose_imgsz": 1280,
+    "pose_every": 2,
+    "processed_fps": 10.0,
+    "pose_conf": 0.3,
+    "kp_conf": 0.4,
+    "posture_hold_s": 0.5,
+    "man_down_s": 5.0
+  },
+  "fall_clips": {
+    "clips": 77,
+    "detected": 63,
+    "detection_rate_pct": 81.8,
+    "by_direction": {
+      "backward": {
+        "clips": 27,
+        "detected": 19,
+        "detection_rate_pct": 70.4
+      },
+      "forward": {
+        "clips": 22,
+        "detected": 19,
+        "detection_rate_pct": 86.4
+      },
+      "sideways": {
+        "clips": 28,
+        "detected": 25,
+        "detection_rate_pct": 89.3
+      }
+    },
+    "latency_s": {
+      "median": 1.42,
+      "p90": 2.86,
+      "max": 7.27
+    },
+    "clips_with_false_trigger_before_fall": 6,
+    "false_trigger_before_fall_by_activity": {
+      "unlabelled": 3,
+      "Standing": 2,
+      "Sleeping": 1
+    },
+    "seconds_from_fall_start_to_clip_end": {
+      "median": 3.96,
+      "max": 9.14
+    },
+    "alert_eligible_clips": 11,
+    "alert_fired_on_eligible": 3
+  },
+  "adl_clips": {
+    "clips": 81,
+    "minutes": 12.5,
+    "clips_with_false_posture": 43,
+    "false_posture_by_activity": {
+      "Sleeping": 13,
+      "Reading": 2,
+      "Sitting": 5,
+      "unlabelled": 10,
+      "Exercising": 7,
+      "Standing": 5,
+      "Walking": 1
+    },
+    "seconds_flagged_lying": 93.3,
+    "clips_with_false_man_down_alert": 2,
+    "false_alert_by_activity": {
+      "Exercising": 1,
+      "Sleeping": 1
+    }
+  },
+  "by_subject_group": {
+    "development: Subject 1-2 (used to diagnose the 2026-10-07 stillness bug)": {
+      "fall_clips": 41,
+      "fall_detected": 33,
+      "alert_eligible": 6,
+      "alert_fired_on_eligible": 2,
+      "adl_clips": 39,
+      "adl_false_alerts": 1
+    },
+    "held out: Subject 3-4": {
+      "fall_clips": 36,
+      "fall_detected": 30,
+      "alert_eligible": 5,
+      "alert_fired_on_eligible": 1,
+      "adl_clips": 42,
+      "adl_false_alerts": 1
+    }
+  },
+  "not_measured": "The full man-down alert on fall clips that end less than man_down_s + 1 s after the fall start (the person is not down long enough for the hold).",
+  "wall_clock_min": 7.7
+}

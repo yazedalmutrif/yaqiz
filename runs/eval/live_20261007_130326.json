@@ -1,0 +1,36 @@
+{
+  "measured_utc": "2026-10-07T10:03:26.646654+00:00",
+  "seconds": 60,
+  "gpu": "NVIDIA GeForce RTX 4070",
+  "ppe_model": "ppe_v2.pt",
+  "cameras_running": 3,
+  "per_camera": {
+    "1": {
+      "name": "الحافة الشرقية للبلاطة",
+      "samples": 60,
+      "fps_median": 10.0,
+      "fps_min": 9.8,
+      "latency_ms_median": 78.0,
+      "latency_p95_ms_max": 110.0,
+      "people_median": 7.0
+    },
+    "2": {
+      "name": "منطقة صبّ الخرسانة",
+      "samples": 60,
+      "fps_median": 10.0,
+      "fps_min": 9.8,
+      "latency_ms_median": 79.0,
+      "latency_p95_ms_max": 125.0,
+      "people_median": 8.0
+    },
+    "3": {
+      "name": "مدخل الموقع",
+      "samples": 60,
+      "fps_median": 10.0,
+      "fps_min": 9.3,
+      "latency_ms_median": 78.0,
+      "latency_p95_ms_max": 141.0,
+      "people_median": 2.0
+    }
+  }
+}

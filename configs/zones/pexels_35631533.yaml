@@ -1,0 +1,8 @@
+# Danger zone for Pexels clip 35631533 (high-angle, portrait, rebar mat + concrete pump line).
+# Points are normalised (x, y) in 0..1 of the frame. The trapezoid follows the
+# rebar mat around the column starter bars where the pump hose discharges.
+clip: pexels_35631533.mp4
+zones:
+  - name: "Pour area"
+    rule: no_entry
+    points: [[0.40, 0.60], [0.97, 0.55], [0.99, 0.99], [0.42, 0.99]]

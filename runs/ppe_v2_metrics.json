@@ -1,0 +1,673 @@
+{
+  "generated_utc": "2026-10-07T06:34:08.272030+00:00",
+  "command": "python train_ppe_v2.py --epochs 50 --patience 12 --batch 32 --workers 8 --cache disk",
+  "weights": "C:\\Users\\yazed\\Projects\\SiteSafety\\runs\\train\\ppe_v2_yolo11s-2\\weights\\best.pt",
+  "weights_sha256": "5934c877f41e5d1846c84a834613c7edd085bac9eba5526f4dcb9d53523abad2",
+  "classes": [
+    "helmet",
+    "head",
+    "vest",
+    "machinery"
+  ],
+  "note": "All numbers copied from Ultralytics' validator (conf 0.001, IoU 0.7, imgsz 640). Per-source rows score only the classes that source labels; test splits carry original labels only.",
+  "training": {
+    "run_dir": "C:\\Users\\yazed\\Projects\\SiteSafety\\runs\\train\\ppe_v2_yolo11s-2",
+    "started_utc": "2026-10-07T05:06:52.595028+00:00",
+    "wall_clock_minutes": 82.3,
+    "epochs_requested": 50,
+    "epochs_completed": 50,
+    "best_epoch_by_fitness": 42,
+    "patience": 12,
+    "imgsz": 640,
+    "batch": 32,
+    "seed": 0,
+    "amp": true,
+    "deterministic": true,
+    "cache": "disk",
+    "base_model": "yolo11s.pt",
+    "val_at_best_epoch": {
+      "precision(B)": 0.93178,
+      "recall(B)": 0.86725,
+      "mAP50(B)": 0.93774,
+      "mAP50-95(B)": 0.66191
+    }
+  },
+  "data": {
+    "train_images": 13065,
+    "val_images": 1504,
+    "test_images": {
+      "hardhat_xie": 1766,
+      "gdut_hwd": 500,
+      "chvg": 255,
+      "rf100_construction_safety": 90,
+      "rf100_excavators": 96,
+      "kr_site_machinery": 566,
+      "cppe_test": 141
+    },
+    "box_totals": {
+      "train": {
+        "original_boxes": {
+          "helmet": 23748,
+          "head": 7482,
+          "vest": 1408,
+          "machinery": 25614
+        },
+        "pseudo_boxes": {
+          "vest": 2054,
+          "helmet": 162,
+          "head": 21
+        }
+      },
+      "val": {
+        "original_boxes": {
+          "helmet": 1898,
+          "head": 541,
+          "vest": 63,
+          "machinery": 3638
+        },
+        "pseudo_boxes": {
+          "vest": 159
+        }
+      }
+    },
+    "pseudo_label_conf_threshold": 0.5
+  },
+  "test": {
+    "per_source": {
+      "hardhat_xie": {
+        "test_images": 1766,
+        "labelled_classes": [
+          "head",
+          "helmet"
+        ],
+        "classes": {
+          "helmet": {
+            "images": 1604,
+            "instances": 4863,
+            "precision": 0.9631,
+            "recall": 0.9445,
+            "mAP50": 0.983,
+            "mAP50-95": 0.6633
+          },
+          "head": {
+            "images": 339,
+            "instances": 1803,
+            "precision": 0.9386,
+            "recall": 0.939,
+            "mAP50": 0.9737,
+            "mAP50-95": 0.6742
+          }
+        },
+        "mean_mAP50_over_labelled": 0.9784,
+        "speed_ms_per_image": {
+          "preprocess": 0.47,
+          "inference": 2.26,
+          "loss": 0.0,
+          "postprocess": 0.57
+        }
+      },
+      "gdut_hwd": {
+        "test_images": 500,
+        "labelled_classes": [
+          "head",
+          "helmet"
+        ],
+        "classes": {
+          "helmet": {
+            "images": 465,
+            "instances": 2671,
+            "precision": 0.9112,
+            "recall": 0.8124,
+            "mAP50": 0.8671,
+            "mAP50-95": 0.5252
+          },
+          "head": {
+            "images": 132,
+            "instances": 827,
+            "precision": 0.9052,
+            "recall": 0.7134,
+            "mAP50": 0.7724,
+            "mAP50-95": 0.4806
+          }
+        },
+        "mean_mAP50_over_labelled": 0.8197,
+        "speed_ms_per_image": {
+          "preprocess": 0.52,
+          "inference": 2.26,
+          "loss": 0.0,
+          "postprocess": 0.62
+        }
+      },
+      "chvg": {
+        "test_images": 255,
+        "labelled_classes": [
+          "head",
+          "helmet",
+          "vest"
+        ],
+        "classes": {
+          "helmet": {
+            "images": 216,
+            "instances": 539,
+            "precision": 0.8843,
+            "recall": 0.9388,
+            "mAP50": 0.9373,
+            "mAP50-95": 0.5746
+          },
+          "head": {
+            "images": 36,
+            "instances": 130,
+            "precision": 0.8717,
+            "recall": 0.9,
+            "mAP50": 0.9202,
+            "mAP50-95": 0.588
+          },
+          "vest": {
+            "images": 133,
+            "instances": 356,
+            "precision": 0.9351,
+            "recall": 0.8494,
+            "mAP50": 0.9358,
+            "mAP50-95": 0.6617
+          }
+        },
+        "mean_mAP50_over_labelled": 0.9311,
+        "speed_ms_per_image": {
+          "preprocess": 0.94,
+          "inference": 3.2,
+          "loss": 0.0,
+          "postprocess": 0.58
+        }
+      },
+      "rf100_construction_safety": {
+        "test_images": 90,
+        "labelled_classes": [
+          "head",
+          "helmet",
+          "vest"
+        ],
+        "classes": {
+          "helmet": {
+            "images": 82,
+            "instances": 195,
+            "precision": 0.8175,
+            "recall": 0.8821,
+            "mAP50": 0.859,
+            "mAP50-95": 0.4353
+          },
+          "head": {
+            "images": 11,
+            "instances": 24,
+            "precision": 0.6026,
+            "recall": 0.5833,
+            "mAP50": 0.5528,
+            "mAP50-95": 0.2343
+          },
+          "vest": {
+            "images": 57,
+            "instances": 129,
+            "precision": 0.8469,
+            "recall": 0.8527,
+            "mAP50": 0.8713,
+            "mAP50-95": 0.4593
+          }
+        },
+        "mean_mAP50_over_labelled": 0.761,
+        "speed_ms_per_image": {
+          "preprocess": 1.21,
+          "inference": 3.22,
+          "loss": 0.0,
+          "postprocess": 0.62
+        }
+      },
+      "rf100_excavators": {
+        "test_images": 96,
+        "labelled_classes": [
+          "machinery"
+        ],
+        "classes": {
+          "machinery": {
+            "images": 95,
+            "instances": 144,
+            "precision": 0.9502,
+            "recall": 0.8333,
+            "mAP50": 0.9043,
+            "mAP50-95": 0.6968
+          }
+        },
+        "mean_mAP50_over_labelled": 0.9043,
+        "speed_ms_per_image": {
+          "preprocess": 1.21,
+          "inference": 3.21,
+          "loss": 0.0,
+          "postprocess": 0.63
+        }
+      },
+      "kr_site_machinery": {
+        "test_images": 566,
+        "labelled_classes": [
+          "machinery"
+        ],
+        "classes": {
+          "machinery": {
+            "images": 566,
+            "instances": 3238,
+            "precision": 0.8922,
+            "recall": 0.8055,
+            "mAP50": 0.8633,
+            "mAP50-95": 0.6199
+          }
+        },
+        "mean_mAP50_over_labelled": 0.8633,
+        "speed_ms_per_image": {
+          "preprocess": 0.47,
+          "inference": 1.94,
+          "loss": 0.0,
+          "postprocess": 0.71
+        }
+      },
+      "cppe_test": {
+        "test_images": 141,
+        "labelled_classes": [
+          "head",
+          "helmet",
+          "vest"
+        ],
+        "classes": {
+          "helmet": {
+            "images": 110,
+            "instances": 192,
+            "precision": 0.831,
+            "recall": 0.7656,
+            "mAP50": 0.7477,
+            "mAP50-95": 0.272
+          },
+          "head": {
+            "images": 24,
+            "instances": 40,
+            "precision": 0.1677,
+            "recall": 0.25,
+            "mAP50": 0.1433,
+            "mAP50-95": 0.0287
+          },
+          "vest": {
+            "images": 111,
+            "instances": 178,
+            "precision": 0.9222,
+            "recall": 0.7416,
+            "mAP50": 0.7926,
+            "mAP50-95": 0.4404
+          }
+        },
+        "mean_mAP50_over_labelled": 0.5612,
+        "speed_ms_per_image": {
+          "preprocess": 1.17,
+          "inference": 3.22,
+          "loss": 0.0,
+          "postprocess": 0.65
+        }
+      }
+    },
+    "combined": {
+      "helmet": {
+        "sources": [
+          "hardhat_xie",
+          "gdut_hwd",
+          "chvg",
+          "rf100_construction_safety"
+        ],
+        "images": 2367,
+        "instances": 8268,
+        "precision": 0.9567,
+        "recall": 0.879,
+        "mAP50": 0.9395,
+        "mAP50-95": 0.6079
+      },
+      "head": {
+        "sources": [
+          "hardhat_xie",
+          "gdut_hwd",
+          "chvg",
+          "rf100_construction_safety"
+        ],
+        "images": 518,
+        "instances": 2784,
+        "precision": 0.9391,
+        "recall": 0.8491,
+        "mAP50": 0.9081,
+        "mAP50-95": 0.6098
+      },
+      "vest": {
+        "sources": [
+          "chvg",
+          "rf100_construction_safety"
+        ],
+        "images": 190,
+        "instances": 485,
+        "precision": 0.9102,
+        "recall": 0.8495,
+        "mAP50": 0.9159,
+        "mAP50-95": 0.5938
+      },
+      "machinery": {
+        "sources": [
+          "rf100_excavators",
+          "kr_site_machinery"
+        ],
+        "images": 661,
+        "instances": 3382,
+        "precision": 0.8952,
+        "recall": 0.8079,
+        "mAP50": 0.8671,
+        "mAP50-95": 0.6236
+      }
+    },
+    "v1_vs_v2": {
+      "hardhat_xie": {
+        "helmet": {
+          "v1": {
+            "images": 1604,
+            "instances": 4863,
+            "precision": 0.7515,
+            "recall": 0.6983,
+            "mAP50": 0.6622,
+            "mAP50-95": 0.1482
+          },
+          "v2": {
+            "images": 1604,
+            "instances": 4863,
+            "precision": 0.9631,
+            "recall": 0.9445,
+            "mAP50": 0.983,
+            "mAP50-95": 0.6633
+          }
+        },
+        "head": {
+          "v1": {
+            "images": 339,
+            "instances": 1803,
+            "precision": 0.1509,
+            "recall": 0.1198,
+            "mAP50": 0.0689,
+            "mAP50-95": 0.0131
+          },
+          "v2": {
+            "images": 339,
+            "instances": 1803,
+            "precision": 0.9386,
+            "recall": 0.939,
+            "mAP50": 0.9737,
+            "mAP50-95": 0.6742
+          }
+        }
+      },
+      "gdut_hwd": {
+        "helmet": {
+          "v1": {
+            "images": 465,
+            "instances": 2671,
+            "precision": 0.6145,
+            "recall": 0.45,
+            "mAP50": 0.3837,
+            "mAP50-95": 0.0703
+          },
+          "v2": {
+            "images": 465,
+            "instances": 2671,
+            "precision": 0.9112,
+            "recall": 0.8124,
+            "mAP50": 0.8671,
+            "mAP50-95": 0.5252
+          }
+        },
+        "head": {
+          "v1": {
+            "images": 132,
+            "instances": 827,
+            "precision": 0.1288,
+            "recall": 0.1028,
+            "mAP50": 0.0398,
+            "mAP50-95": 0.0088
+          },
+          "v2": {
+            "images": 132,
+            "instances": 827,
+            "precision": 0.9052,
+            "recall": 0.7134,
+            "mAP50": 0.7724,
+            "mAP50-95": 0.4806
+          }
+        }
+      },
+      "chvg": {
+        "helmet": {
+          "v1": {
+            "images": 216,
+            "instances": 539,
+            "precision": 0.846,
+            "recall": 0.8662,
+            "mAP50": 0.8696,
+            "mAP50-95": 0.4591
+          },
+          "v2": {
+            "images": 216,
+            "instances": 539,
+            "precision": 0.8843,
+            "recall": 0.9388,
+            "mAP50": 0.9373,
+            "mAP50-95": 0.5746
+          }
+        },
+        "head": {
+          "v1": {
+            "images": 36,
+            "instances": 130,
+            "precision": 0.3647,
+            "recall": 0.0398,
+            "mAP50": 0.0754,
+            "mAP50-95": 0.0175
+          },
+          "v2": {
+            "images": 36,
+            "instances": 130,
+            "precision": 0.8717,
+            "recall": 0.9,
+            "mAP50": 0.9202,
+            "mAP50-95": 0.588
+          }
+        },
+        "vest": {
+          "v1": {
+            "images": 133,
+            "instances": 356,
+            "precision": 0.6814,
+            "recall": 0.8455,
+            "mAP50": 0.8329,
+            "mAP50-95": 0.4805
+          },
+          "v2": {
+            "images": 133,
+            "instances": 356,
+            "precision": 0.9351,
+            "recall": 0.8494,
+            "mAP50": 0.9358,
+            "mAP50-95": 0.6617
+          }
+        }
+      },
+      "rf100_construction_safety": {
+        "helmet": {
+          "v1": {
+            "images": 82,
+            "instances": 195,
+            "precision": 0.7361,
+            "recall": 0.8615,
+            "mAP50": 0.7863,
+            "mAP50-95": 0.3432
+          },
+          "v2": {
+            "images": 82,
+            "instances": 195,
+            "precision": 0.8175,
+            "recall": 0.8821,
+            "mAP50": 0.859,
+            "mAP50-95": 0.4353
+          }
+        },
+        "head": {
+          "v1": {
+            "images": 11,
+            "instances": 24,
+            "precision": 0.3552,
+            "recall": 0.125,
+            "mAP50": 0.1691,
+            "mAP50-95": 0.0666
+          },
+          "v2": {
+            "images": 11,
+            "instances": 24,
+            "precision": 0.6026,
+            "recall": 0.5833,
+            "mAP50": 0.5528,
+            "mAP50-95": 0.2343
+          }
+        },
+        "vest": {
+          "v1": {
+            "images": 57,
+            "instances": 129,
+            "precision": 0.6272,
+            "recall": 0.8737,
+            "mAP50": 0.7902,
+            "mAP50-95": 0.3733
+          },
+          "v2": {
+            "images": 57,
+            "instances": 129,
+            "precision": 0.8469,
+            "recall": 0.8527,
+            "mAP50": 0.8713,
+            "mAP50-95": 0.4593
+          }
+        }
+      },
+      "cppe_test": {
+        "helmet": {
+          "v1": {
+            "images": 110,
+            "instances": 192,
+            "precision": 0.9594,
+            "recall": 0.9062,
+            "mAP50": 0.926,
+            "mAP50-95": 0.4844
+          },
+          "v2": {
+            "images": 110,
+            "instances": 192,
+            "precision": 0.831,
+            "recall": 0.7656,
+            "mAP50": 0.7477,
+            "mAP50-95": 0.272
+          }
+        },
+        "head": {
+          "v1": {
+            "images": 24,
+            "instances": 40,
+            "precision": 0.413,
+            "recall": 0.275,
+            "mAP50": 0.2409,
+            "mAP50-95": 0.0721
+          },
+          "v2": {
+            "images": 24,
+            "instances": 40,
+            "precision": 0.1677,
+            "recall": 0.25,
+            "mAP50": 0.1433,
+            "mAP50-95": 0.0287
+          }
+        },
+        "vest": {
+          "v1": {
+            "images": 111,
+            "instances": 178,
+            "precision": 0.8623,
+            "recall": 0.8652,
+            "mAP50": 0.9029,
+            "mAP50-95": 0.5819
+          },
+          "v2": {
+            "images": 111,
+            "instances": 178,
+            "precision": 0.9222,
+            "recall": 0.7416,
+            "mAP50": 0.7926,
+            "mAP50-95": 0.4404
+          }
+        }
+      },
+      "combined_helmet": {
+        "helmet": {
+          "v1": {
+            "images": 2367,
+            "instances": 8268,
+            "precision": 0.7549,
+            "recall": 0.615,
+            "mAP50": 0.5888,
+            "mAP50-95": 0.1398
+          },
+          "v2": {
+            "images": 2367,
+            "instances": 8268,
+            "precision": 0.9567,
+            "recall": 0.879,
+            "mAP50": 0.9395,
+            "mAP50-95": 0.6079
+          }
+        }
+      },
+      "combined_head": {
+        "head": {
+          "v1": {
+            "images": 518,
+            "instances": 2784,
+            "precision": 0.1968,
+            "recall": 0.0779,
+            "mAP50": 0.0598,
+            "mAP50-95": 0.0118
+          },
+          "v2": {
+            "images": 518,
+            "instances": 2784,
+            "precision": 0.9391,
+            "recall": 0.8491,
+            "mAP50": 0.9081,
+            "mAP50-95": 0.6098
+          }
+        }
+      },
+      "combined_vest": {
+        "vest": {
+          "v1": {
+            "images": 190,
+            "instances": 485,
+            "precision": 0.6206,
+            "recall": 0.868,
+            "mAP50": 0.8172,
+            "mAP50-95": 0.4423
+          },
+          "v2": {
+            "images": 190,
+            "instances": 485,
+            "precision": 0.9102,
+            "recall": 0.8495,
+            "mAP50": 0.9159,
+            "mAP50-95": 0.5938
+          }
+        }
+      }
+    },
+    "combined_mean_mAP50": 0.9077
+  }
+}

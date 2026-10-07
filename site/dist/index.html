@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>يقظ | منظومة سلامة ذكية لمواقع البناء</title>
+  <meta name="description" content="يقظ منظومة سلامة لمواقع البناء تعمل على كاميرات الموقع الحالية: ترصد معدات الوقاية، وتنبّه عند دخول مناطق الخطر. مشروع فريق مشارك في الهاكاثون الهندسي IECE 2026.">
+  <meta name="theme-color" content="#EDEFEA">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='6' fill='%2322262A'/%3E%3Cpath d='M32 10 56 52H8Z' fill='%23E4F54A'/%3E%3Cpath d='M32 24v14M32 44v2' stroke='%2322262A' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+  <script type="module" crossorigin src="./assets/index-CGuJTsnp.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-C8Vg5Lkn.css">
+</head>
+<body>
+  <a class="skip" href="#main">تخطَّ إلى المحتوى</a>
+
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="يقظ، العودة إلى البداية">يقظ</a>
+    <nav class="topnav" aria-label="أقسام الصفحة">
+      <a href="#problem">المشكلة</a>
+      <a href="#plan-to-camera">الفكرة</a>
+      <a href="#prototype">النموذج الأولي</a>
+      <a href="#team">الفريق</a>
+    </nav>
+    <p class="sheet-indicator"><span>اللوحة</span> <b id="sheet-code" dir="ltr">S-00</b></p>
+    <div class="dimline" aria-hidden="true"><span class="dimline__fill"></span></div>
+  </header>
+
+  <main id="main">
+
+    <!-- S-00 · Hero: live site plan -->
+    <section class="sheet hero" id="top" data-sheet="S-00">
+      <div class="hero__text">
+        <p class="kicker">الهاكاثون الهندسي – IECE 2026، المسار الثالث: الابتكار الهندسي</p>
+        <h1 class="hero__title">يقظ</h1>
+        <p class="hero__tagline">موقع ينبّه قبل الحادث.. بدلًا من كاميرا تكتفي بتسجيله</p>
+        <p class="hero__lede">منظومة سلامة لمواقع البناء تعمل على كاميرات الموقع الحالية: ترصد معدات الوقاية، وتنبّه فور دخول عامل إلى منطقة خطر، وتحوّل كل حادث وشيك إلى مؤشر خطر لكل منطقة.</p>
+        <div class="hero__actions">
+          <a class="btn btn--ink" href="#plan-to-camera">شاهد كيف يعمل</a>
+          <a class="btn btn--line" href="#prototype">النموذج الأولي</a>
+        </div>
+      </div>
+
+      <figure class="hero__plan">
+        <svg class="plan" viewBox="0 0 800 640" role="img" aria-labelledby="hero-plan-title">
+          <title id="hero-plan-title">مخطط موقع إنشاء توضيحي فيه حفريات مفتوحة ونطاق رافعة برجية وحافة بلاطة وكاميرتان، وعامل يدخل منطقة الحفريات فيُطلق يقظ تنبيهًا.</title>
+          <defs>
+            <pattern id="hatch" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+              <line x1="0" y1="0" x2="0" y2="9" class="hatch-line"/>
+            </pattern>
+          </defs>
+          <g class="gridlines">
+            <line x1="120" y1="64" x2="120" y2="606"/><line x1="260" y1="64" x2="260" y2="606"/><line x1="400" y1="64" x2="400" y2="606"/><line x1="540" y1="64" x2="540" y2="606"/><line x1="680" y1="64" x2="680" y2="606"/>
+            <line x1="56" y1="120" x2="744" y2="120"/><line x1="56" y1="250" x2="744" y2="250"/><line x1="56" y1="380" x2="744" y2="380"/><line x1="56" y1="510" x2="744" y2="510"/>
+          </g>
+          <g class="bubbles">
+            <g transform="translate(120 42)"><circle r="15"/><text y="6">A</text></g>
+            <g transform="translate(260 42)"><circle r="15"/><text y="6">B</text></g>
+            <g transform="translate(400 42)"><circle r="15"/><text y="6">C</text></g>
+            <g transform="translate(540 42)"><circle r="15"/><text y="6">D</text></g>
+            <g transform="translate(680 42)"><circle r="15"/><text y="6">E</text></g>
+            <g transform="translate(768 120)"><circle r="15"/><text y="6">1</text></g>
+            <g transform="translate(768 250)"><circle r="15"/><text y="6">2</text></g>
+            <g transform="translate(768 380)"><circle r="15"/><text y="6">3</text></g>
+            <g transform="translate(768 510)"><circle r="15"/><text y="6">4</text></g>
+          </g>
+          <polygon class="cone" id="cone-1" points="40,612 280,140 560,330"/>
+          <polygon class="cone" id="cone-2" points="776,612 420,505 575,392"/>
+          <g class="building">
+            <rect class="slab" x="120" y="120" width="420" height="260"/>
+            <rect class="col" x="114" y="114" width="12" height="12"/><rect class="col" x="254" y="114" width="12" height="12"/><rect class="col" x="394" y="114" width="12" height="12"/><rect class="col" x="534" y="114" width="12" height="12"/>
+            <rect class="col" x="114" y="244" width="12" height="12"/><rect class="col" x="254" y="244" width="12" height="12"/><rect class="col" x="394" y="244" width="12" height="12"/><rect class="col" x="534" y="244" width="12" height="12"/>
+            <rect class="col" x="114" y="374" width="12" height="12"/><rect class="col" x="254" y="374" width="12" height="12"/><rect class="col" x="394" y="374" width="12" height="12"/><rect class="col" x="534" y="374" width="12" height="12"/>
+            <rect class="core" x="150" y="150" width="70" height="70"/>
+            <path class="core-x" d="M150 150 220 220M220 150 150 220"/>
+          </g>
+          <line class="edge-zone" x1="540" y1="120" x2="540" y2="380"/>
+          <text class="lbl" x="540" y="404">حافة البلاطة</text>
+          <polygon class="exc-hi" points="430,440 700,425 708,590 448,598"/>
+          <polygon class="exc-hatch" points="430,440 700,425 708,590 448,598" fill="url(#hatch)"/>
+          <polygon class="exc-outline" points="430,440 700,425 708,590 448,598"/>
+          <text class="lbl" x="572" y="624">حفريات مفتوحة</text>
+          <g class="crane">
+            <circle class="crane-radius" cx="640" cy="250" r="130"/>
+            <g id="jib">
+              <line class="jib" x1="640" y1="250" x2="770" y2="250"/>
+              <circle class="load-zone" cx="770" cy="250" r="24"/>
+              <circle class="hook" cx="770" cy="250" r="6"/>
+            </g>
+            <rect class="mast" x="632" y="242" width="16" height="16"/>
+            <path class="mast-x" d="M632 242 648 258M648 242 632 258"/>
+          </g>
+          <text class="lbl" x="640" y="104">نطاق الرافعة</text>
+          <g class="camera" transform="translate(40 612) rotate(-58)"><rect x="-14" y="-8" width="28" height="16" rx="2"/><path d="M14-5 24-10V10L14 5Z"/></g>
+          <g class="camera" transform="translate(776 612) rotate(-150)"><rect x="-14" y="-8" width="28" height="16" rx="2"/><path d="M14-5 24-10V10L14 5Z"/></g>
+          <g class="worker" id="w1"><circle r="8"/><text class="wid" y="-14">#07</text></g>
+          <g class="worker" id="w2"><circle r="8"/><text class="wid" y="-14">#11</text></g>
+          <g class="worker" id="w4"><circle r="8"/><text class="wid" y="-14">#21</text></g>
+          <path class="revcloud" id="hero-cloud" d="M0 0"/>
+          <g class="worker worker--focus" id="w3"><circle r="8"/><text class="wid" y="-14">#14</text></g>
+          <g class="north" transform="translate(58 92)"><circle r="18"/><path d="M0-14 7 8 0 3-7 8Z"/><text y="44">N</text></g>
+        </svg>
+        <div class="alert-tag" id="hero-alert" role="status" aria-live="off">
+          <p class="alert-tag__title">تنبيه: دخول منطقة الحفريات</p>
+          <p class="alert-tag__meta"><span dir="ltr">CAM-02</span> العامل <span dir="ltr">#14</span> <span dir="ltr">10:42:15</span></p>
+        </div>
+        <figcaption class="plan-caption">مخطط توضيحي: يقظ يتابع الموقع من كاميرتين ويرسم سحابة مراجعة حول أي دخول لمنطقة خطر.</figcaption>
+      </figure>
+
+      <div class="titleblock" aria-hidden="true">
+        <span class="tb-code" dir="ltr">S-00</span><span>مخطط موقع توضيحي</span><span>يقظ</span>
+      </div>
+    </section>
+
+    <!-- S-01 · Problem -->
+    <section class="sheet problem" id="problem" data-sheet="S-01">
+      <h2 class="statement" id="statement">كاميرات المراقبة تسجّل الحادث.. ولا تنبّه قبله</h2>
+
+      <div class="figures">
+        <div class="figure-cell">
+          <p class="figure-num"><span class="count" data-to="27133" data-format="int">27,133</span></p>
+          <p class="figure-text">إصابة عمل في جميع القطاعات سجّلتها التأمينات الاجتماعية في المملكة عام 2023، منها <b><span class="count" data-to="7413" data-format="int">7,413</span></b> بسبب السقوط<sup>1</sup></p>
+        </div>
+        <div class="figure-cell">
+          <p class="figure-num"><span class="count" data-to="1032" data-format="int">1,032</span></p>
+          <p class="figure-text">وفاة بين العاملين في مهن البناء والاستخراج في الولايات المتحدة عام 2024، منها <b><span class="count" data-to="370" data-format="int">370</span></b> بسبب السقوط والانزلاق والتعثر<sup>2</sup></p>
+        </div>
+        <div class="figure-cell">
+          <p class="figure-num"><span class="count" data-to="2.93" data-format="dec2">2.93</span> <small>مليون</small></p>
+          <p class="figure-text">وفاة سنويًا حول العالم بسبب حوادث العمل والأمراض المهنية<sup>3</sup></p>
+        </div>
+      </div>
+      <ol class="notes">
+        <li>المؤسسة العامة للتأمينات الاجتماعية، عبر صحيفة عكاظ (مارس 2024).</li>
+        <li>مكتب إحصاءات العمل الأمريكي BLS، فبراير 2026.</li>
+        <li>منظمة العمل الدولية ILO، تقرير 2023 (بيانات 2019).</li>
+      </ol>
+
+      <div class="two-col">
+        <div>
+          <h3>أين تقع الفجوة؟</h3>
+          <ul class="gaps">
+            <li>المشرف لا يرى كل أجزاء الموقع في كل لحظة.</li>
+            <li>كاميرات المراقبة تسجّل الحادث ولا تمنعه.</li>
+            <li>الحوادث الوشيكة نادرًا ما تُرصد وتُسجَّل في أغلب المواقع، فتضيع الإشارات المبكرة إلى مكان الحادث القادم.</li>
+            <li>العامل الذي يسقط أو يُصاب قد لا يستطيع الوصول إلى زر الطوارئ.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>لماذا الآن؟</h3>
+          <ul class="whynow">
+            <li>يُطبَّق قرار حظر العمل تحت أشعة الشمس من 12:00 إلى 15:00 من 15 يونيو إلى 15 سبتمبر على جميع منشآت القطاع الخاص، وتدعو الوزارة أصحاب العمل إلى توفير الظل وأماكن الراحة وتوعية العاملين بمخاطر الإجهاد الحراري.<span class="src">وزارة الموارد البشرية والتنمية الاجتماعية</span></li>
+            <li>يتيح المجلس الوطني للسلامة والصحة المهنية خدمة إلكترونية للإبلاغ عن حوادث العمل وإصاباته والحوادث الوشيكة، ويقظ يجعل رصد الحوادث الوشيكة آليًا بدل الاعتماد على الإبلاغ اليدوي.<span class="src">ncosh.gov.sa</span></li>
+            <li>كود البناء السعودي يخصص فصلًا لاحتياطات السلامة أثناء التنفيذ (SBC 201-2024، الفصل 33)، ويقظ يضيف إليه رقابة لحظية على سلامة العاملين.<span class="src">sbc.gov.sa</span></li>
+            <li>نظام حماية البيانات الشخصية يفرض جمع الحد الأدنى من البيانات وإبلاغ الأفراد بالغرض وإتلاف البيانات بعد انتهائه.. وهذا ما بُني عليه يقظ من البداية.<span class="src">المواد 11 و13 و18</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="titleblock" aria-hidden="true"><span class="tb-code" dir="ltr">S-01</span><span>المشكلة</span><span>يقظ</span></div>
+    </section>
+
+    <!-- S-02 · Plan to camera (pinned signature sequence) -->
+    <section class="sheet p2c" id="plan-to-camera" data-sheet="S-02">
+      <div class="p2c__pin">
+        <div class="p2c__copy">
+          <h2>من المخطط إلى الكاميرا</h2>
+          <p class="p2c__intro">مهندس السلامة يعمل على المخطط الذي يعرفه، ويقظ يتولى الباقي.</p>
+          <ol class="steps">
+            <li class="step" data-step="1">يرسم مهندس السلامة منطقة الخطر على مخطط الموقع مرة واحدة.</li>
+            <li class="step" data-step="2">يُسقِط يقظ المنطقة على مجال رؤية الكاميرا تلقائيًا.</li>
+            <li class="step" data-step="3">يتتبّع العاملين ويختبر موضع أقدامهم داخل المنطقة.</li>
+            <li class="step" data-step="4">يُطلق التنبيه ويسجّل الحدث في سجل الموقع.</li>
+          </ol>
+          <p class="fineprint">المقطع من مكتبة Pexels، والمنطقة مرسومة للتوضيح ولا تعني وجود مخالفة فعلية. الصورة من مخرجات النموذج الأولي.</p>
+        </div>
+
+        <figure class="p2c__stage">
+          <div class="feed-bar" aria-hidden="true">
+            <span class="rec"></span><span dir="ltr">CAM-02</span><span class="feed-bar__state">المخطط</span><span class="feed-time" dir="ltr">10:42:15</span>
+          </div>
+          <svg class="p2c-svg" viewBox="0 0 1280 720" role="img" aria-labelledby="p2c-title">
+            <title id="p2c-title">منطقة خطر تُرسم على مخطط البلاطة، ثم تُسقَط على صورة الكاميرا، فيظهر ثلاثة عمّال داخلها ويصدر التنبيه.</title>
+            <image class="p2c-photo" href="img/zone-slab-edge.webp" x="0" y="0" width="1280" height="720" preserveAspectRatio="xMidYMid slice"/>
+            <g class="p2c-plan">
+              <g class="p2c-grid">
+                <line x1="200" y1="88" x2="200" y2="636"/><line x1="425" y1="88" x2="425" y2="636"/><line x1="650" y1="88" x2="650" y2="636"/><line x1="875" y1="88" x2="875" y2="636"/><line x1="1100" y1="88" x2="1100" y2="636"/>
+                <line x1="170" y1="110" x2="1130" y2="110"/><line x1="170" y1="277" x2="1130" y2="277"/><line x1="170" y1="443" x2="1130" y2="443"/><line x1="170" y1="610" x2="1130" y2="610"/>
+              </g>
+              <g class="p2c-bubbles">
+                <g transform="translate(200 62)"><circle r="18"/><text y="7">A</text></g><g transform="translate(425 62)"><circle r="18"/><text y="7">B</text></g><g transform="translate(650 62)"><circle r="18"/><text y="7">C</text></g><g transform="translate(875 62)"><circle r="18"/><text y="7">D</text></g><g transform="translate(1100 62)"><circle r="18"/><text y="7">E</text></g>
+                <g transform="translate(1160 110)"><circle r="18"/><text y="7">1</text></g><g transform="translate(1160 277)"><circle r="18"/><text y="7">2</text></g><g transform="translate(1160 443)"><circle r="18"/><text y="7">3</text></g><g transform="translate(1160 610)"><circle r="18"/><text y="7">4</text></g>
+              </g>
+              <rect class="p2c-line p2c-slab" x="200" y="110" width="900" height="500"/>
+              <rect class="p2c-line" x="240" y="150" width="110" height="90"/>
+              <path class="p2c-line" d="M240 150 350 240M350 150 240 240"/>
+              <g class="p2c-cols">
+                <rect x="192" y="102" width="16" height="16"/><rect x="417" y="102" width="16" height="16"/><rect x="642" y="102" width="16" height="16"/><rect x="867" y="102" width="16" height="16"/><rect x="1092" y="102" width="16" height="16"/>
+                <rect x="192" y="269" width="16" height="16"/><rect x="417" y="269" width="16" height="16"/><rect x="642" y="269" width="16" height="16"/><rect x="867" y="269" width="16" height="16"/><rect x="1092" y="269" width="16" height="16"/>
+                <rect x="192" y="435" width="16" height="16"/><rect x="417" y="435" width="16" height="16"/><rect x="642" y="435" width="16" height="16"/><rect x="867" y="435" width="16" height="16"/><rect x="1092" y="435" width="16" height="16"/>
+                <rect x="192" y="602" width="16" height="16"/><rect x="417" y="602" width="16" height="16"/><rect x="642" y="602" width="16" height="16"/><rect x="867" y="602" width="16" height="16"/><rect x="1092" y="602" width="16" height="16"/>
+              </g>
+              <g class="north" transform="translate(110 610)"><circle r="22"/><path d="M0-17 9 10 0 4-9 10Z"/><text y="50">N</text></g>
+            </g>
+            <polygon class="p2c-zone" points="1010,110 1100,110 1100,610 1010,610"/>
+            <text class="p2c-zone-label" x="1055" y="664">الحافة الشرقية للبلاطة</text>
+            <g class="p2c-feet">
+              <g transform="translate(890 303)"><circle class="ring" r="18"/><circle r="6"/></g>
+              <g transform="translate(936 304)"><circle class="ring" r="18"/><circle r="6"/></g>
+              <g transform="translate(1099 316)"><circle class="ring" r="18"/><circle r="6"/></g>
+            </g>
+          </svg>
+          <div class="p2c-alert" role="status" aria-live="off">
+            <p class="p2c-alert__title">تنبيه: دخول منطقة خطر</p>
+            <p class="p2c-alert__body">3 عمّال داخل منطقة الحافة الشرقية للبلاطة</p>
+            <ul class="voices" aria-label="التنبيه الصوتي بعدة لغات">
+              <li><span class="voices__lang">العربية</span><span lang="ar">انتبه، أنت داخل منطقة خطر</span></li>
+              <li><span class="voices__lang">English</span><span lang="en" dir="ltr">Caution: you are inside a danger zone</span></li>
+              <li><span class="voices__lang">اردو</span><span lang="ur">خبردار! آپ خطرناک علاقے میں ہیں</span></li>
+              <li><span class="voices__lang">हिन्दी</span><span lang="hi" dir="ltr">सावधान! आप खतरनाक क्षेत्र में हैं</span></li>
+              <li><span class="voices__lang">বাংলা</span><span lang="bn" dir="ltr">সাবধান! আপনি বিপজ্জনক এলাকায় আছেন</span></li>
+            </ul>
+            <p class="p2c-alert__log">سُجِّل الحدث في سجل الموقع</p>
+          </div>
+        </figure>
+      </div>
+      <div class="titleblock" aria-hidden="true"><span class="tb-code" dir="ltr">S-02</span><span>من المخطط إلى الكاميرا</span><span>يقظ</span></div>
+    </section>
+
+    <!-- S-03 · How it works (single-line schematic) -->
+    <section class="sheet how" id="how" data-sheet="S-03">
+      <h2>كيف يعمل؟</h2>
+      <p class="section-lede">من الكاميرا إلى التقرير اليومي داخل الموقع نفسه، على كاميرات موجودة أو هواتف بسيطة، دون أجهزة يرتديها العامل.</p>
+      <figure class="schematic">
+        <svg viewBox="0 0 1200 430" role="img" aria-labelledby="schem-title">
+          <title id="schem-title">مخطط المسار: الكاميرات، ثم جهاز معالجة في الموقع، ثم محرك القواعد، الذي يتفرع إلى التنبيهات وإلى سجل الأحداث، ومنه إلى مؤشر الخطر والتقرير اليومي.</title>
+          <g class="wires">
+            <path id="w-a" d="M1005 200H880"/>
+            <path id="w-b" d="M720 200H600"/>
+            <path id="w-c" d="M455 175C400 120 380 110 340 110"/>
+            <path id="w-d" d="M455 225C410 290 400 315 365 315"/>
+            <path id="w-e" d="M235 315H170"/>
+          </g>
+          <g class="node">
+            <rect x="1005" y="140" width="170" height="120"/>
+            <g class="node-icon" transform="translate(1090 172)"><rect x="-17" y="-10" width="34" height="20" rx="3"/><path d="M17-6 29-12V12L17 6Z"/></g>
+            <text x="1090" y="218">كاميرات الموقع</text>
+            <text x="1090" y="244" class="node-sub" dir="ltr">RTSP</text>
+          </g>
+          <g class="node">
+            <rect x="720" y="140" width="160" height="120"/>
+            <text x="800" y="186">معالجة في الموقع</text>
+            <text x="800" y="214" class="node-sub" dir="ltr">YOLO11</text>
+            <text x="800" y="242" class="node-sub">رصد، وضعية، تتبّع</text>
+          </g>
+          <g class="node node--rule">
+            <path d="M527 120 600 200 527 280 455 200Z"/>
+            <text x="527" y="196">محرك</text>
+            <text x="527" y="222">القواعد</text>
+          </g>
+          <g class="node node--alert">
+            <rect x="120" y="60" width="220" height="100"/>
+            <text x="230" y="98">التنبيهات</text>
+            <text x="230" y="126" class="node-sub">المشرف، صوت بعدة لغات</text>
+            <text x="230" y="150" class="node-sub">مشغّل المعدة (محاكاة)</text>
+          </g>
+          <g class="node">
+            <path d="M235 285c0-12 130-12 130 0v62c0 12-130 12-130 0Z"/>
+            <path d="M235 285c0 12 130 12 130 0" class="cyl-top"/>
+            <text x="300" y="330">سجل الأحداث</text>
+          </g>
+          <g class="node">
+            <rect x="20" y="265" width="150" height="100"/>
+            <text x="95" y="308">مؤشر الخطر</text>
+            <text x="95" y="336" class="node-sub">وتقرير يومي</text>
+          </g>
+          <circle class="packet" id="pk-a" r="7"/><circle class="packet" id="pk-b" r="7"/><circle class="packet" id="pk-c" r="7"/><circle class="packet" id="pk-d" r="7"/><circle class="packet" id="pk-e" r="7"/>
+        </svg>
+      </figure>
+      <p class="principle">في تصميم يقظ: المعالجة داخل الموقع، والوجوه تُطمس في الصور المحفوظة، ولا يخرج من الموقع إلا الحدث.</p>
+      <div class="titleblock" aria-hidden="true"><span class="tb-code" dir="ltr">S-03</span><span>كيف يعمل</span><span>يقظ</span></div>
+    </section>
+
+    <!-- S-04 · Hazard schedule -->
+    <section class="sheet hazards" id="hazards" data-sheet="S-04">
+      <h2>جدول المخاطر</h2>
+      <p class="section-lede">لكل خطر في الموقع قاعدة مرسومة على المخطط، وتنبيه يصل لحظة حدوثه.</p>
+      <table class="schedule">
+        <thead>
+          <tr><th scope="col"><span class="visually-hidden">رمز</span></th><th scope="col">الخطر</th><th scope="col">ما يفعله يقظ</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="sym"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M6 10H24V34"/><circle cx="31" cy="11" r="4"/><path d="M31 16V26M31 26 27 34M31 26 35 34M27 19H35"/><path d="M33 3l-2 4" class="accent"/></svg></td>
+            <th scope="row"><span class="hl">السقوط من الارتفاع</span></th>
+            <td>منطقة «حواف وفتحات» تشترط حزام الأمان، ورصد سقوط العامل وبقائه دون حركة</td>
+          </tr>
+          <tr>
+            <td class="sym"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M4 6H36M20 6V18"/><path d="M20 18a4 4 0 1 1-4 4"/><rect x="12" y="27" width="16" height="9" class="accent"/></svg></td>
+            <th scope="row"><span class="hl">الاصطدام والأحمال المعلّقة</span></th>
+            <td>تنبيه فوري عند الدخول تحت حمل الرافعة أو داخل نطاق دوران الحفّار أثناء التشغيل</td>
+          </tr>
+          <tr>
+            <td class="sym"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M2 14H12V34H28V14H38"/><path d="M14 30 26 18M14 22 22 14M18 34 30 22" class="accent"/></svg></td>
+            <th scope="row"><span class="hl">الانحشار والانهيار</span></th>
+            <td>تنبيه فوري عند الدخول إلى منطقة الحفريات المفتوحة</td>
+          </tr>
+          <tr>
+            <td class="sym"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M8 26a12 12 0 0 1 24 0Z" class="accent"/><path d="M4 26H36M20 14V10"/></svg></td>
+            <th scope="row"><span class="hl">غياب معدات الوقاية</span></th>
+            <td>رصد الخوذة والسترة العاكسة في كامل الموقع</td>
+          </tr>
+          <tr>
+            <td class="sym"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="7" class="accent"/><path d="M20 4V8M20 32V36M4 20H8M32 20H36M8.7 8.7l2.8 2.8M28.5 28.5l2.8 2.8M8.7 31.3l2.8-2.8M28.5 11.5l2.8-2.8"/></svg></td>
+            <th scope="row"><span class="hl">الإجهاد الحراري</span></th>
+            <td>رفع مؤشر الخطر مع الحرارة والرطوبة، ورصد العمل المكشوف وقت الحظر</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="fineprint">المخاطر الأربع الأشد فتكًا في البناء وفق إدارة السلامة والصحة المهنية الأمريكية OSHA: السقوط، والاصطدام بالأجسام، والانحشار، والصعق الكهربائي.</p>
+      <div class="titleblock" aria-hidden="true"><span class="tb-code" dir="ltr">S-04</span><span>جدول المخاطر</span><span>يقظ</span></div>
+    </section>
+
+    <!-- S-05 · The worker (camera feed) -->
+    <section class="sheet feed worker" id="worker" data-sheet="S-05">
+      <h2>العامل نفسه جزء من منظومة السلامة</h2>
+      <p class="section-lede">يقرأ يقظ وضعية الجسم من الكاميرا نفسها بنموذج YOLO11-pose. نداء الاستغاثة ورصد السقوط منفّذان في النموذج الأولي.</p>
+      <div class="tiles">
+        <figure class="tile" id="tile-sos">
+          <div class="tile__bar"><span dir="ltr">CAM-03</span><span>نداء استغاثة بإشارة</span><span class="tag">منفّذ، بانتظار التقييم الميداني</span></div>
+          <svg class="pose" viewBox="0 0 320 280" role="img" aria-label="عامل يرفع ذراعيه متقاطعتين فوق رأسه، فيتحول إطار الرصد إلى الأحمر ويصدر نداء استغاثة.">
+            <g class="pose-grid"><path d="M0 70H320M0 140H320M0 210H320M80 0V280M160 0V280M240 0V280"/></g>
+            <rect class="bbox" x="110" y="22" width="100" height="244"/>
+            <text class="bbox-label" x="210" y="16">#14</text>
+            <g class="skeleton"></g>
+          </svg>
+          <p class="tile__alert" role="status" aria-live="off">نداء استغاثة: العامل <span dir="ltr">#14</span>، المنطقة C</p>
+          <figcaption>يرفع العامل ذراعيه متقاطعتين أمام أي كاميرا، فيُطلق يقظ تنبيه طوارئ للمشرف مع موقع العامل على المخطط.</figcaption>
+        </figure>
+        <figure class="tile" id="tile-fall">
+          <div class="tile__bar"><span dir="ltr">CAM-07</span><span>رصد السقوط</span><span class="tag">منفّذ، بانتظار التقييم الميداني</span></div>
+          <svg class="pose" viewBox="0 0 420 280" role="img" aria-label="عامل يسقط ويبقى دون حركة، فيعدّ يقظ الثواني ثم يُطلق التنبيه تلقائيًا.">
+            <g class="pose-grid"><path d="M0 70H420M0 140H420M0 210H420M105 0V280M210 0V280M315 0V280"/></g>
+            <line class="ground" x1="20" y1="266" x2="400" y2="266"/>
+            <rect class="bbox" x="70" y="22" width="100" height="244"/>
+            <text class="bbox-label" x="170" y="16">#09</text>
+            <g class="skeleton"></g>
+          </svg>
+          <p class="tile__timer" dir="ltr" aria-hidden="true">00:00</p>
+          <p class="tile__alert" role="status" aria-live="off">سقوط: العامل <span dir="ltr">#09</span> دون حركة، المنطقة B</p>
+          <figcaption>إذا سقط العامل وبقي دون حركة لثوانٍ، يُطلق يقظ التنبيه تلقائيًا، حتى لو لم يستطع طلب المساعدة. في اختبار على بيانات GMDCSA-24 المفتوحة (77 مقطع سقوط صُوّرت داخل منازل)، تعرّف يقظ على وضعية السقوط في 63 منها (82%)، وكان الوسيط 1.4 ثانية من بداية السقوط. أما التنبيه الكامل فيحتاج مقاطع أطول، وسنختبره على مقاطع مصوّرة في موقع إنشاء.</figcaption>
+        </figure>
+      </div>
+      <p class="statement-sm">لا يحتاج العامل إلى جهاز أو زر داخل نطاق تغطية الكاميرات.</p>
+      <div class="titleblock" aria-hidden="true"><span class="tb-code" dir="ltr">S-05</span><span>العامل</span><span>يقظ</span></div>
+    </section>
+
+    <!-- S-06 · Risk index (scrubbed shift) -->
+    <section class="sheet risk" id="risk" data-sheet="S-06">
+      <div class="risk__pin">
+        <div class="risk__copy">
+          <h2>مؤشر خطر لكل منطقة، في كل وردية</h2>
+          <p>كل مخالفة وحادث وشيك يُسجَّل في سجل الموقع، فيتكوّن مؤشر يبيّن أي المناطق تحتاج تدخلًا قبل غيرها، مع تقرير سلامة يومي بالعربية.</p>
+          <p class="risk__readout"><span>الساعة</span> <b id="risk-hour" dir="ltr">06:00</b><br><span>الأعلى خطرًا الآن:</span> <b id="risk-top">المدخل</b></p>
+          <p class="fineprint">تصوّر توضيحي ببيانات افتراضية لشرح الفكرة، وليس قراءات حقيقية. المؤشر منفّذ في النموذج الأولي، ولم يُجرَّب بعد على بيانات موقع حقيقي.</p>
+        </div>
+        <figure class="risk__map">
+          <svg viewBox="0 0 640 380" role="img" aria-label="ست مناطق في الموقع تتغير ألوانها حسب مستوى الخطر على مدار الوردية.">
+            <g class="zones">
+              <g class="zone" data-zone="B"><rect x="440" y="30" width="170" height="150"/><text x="525" y="98">حافة البلاطة</text><text class="zone-level" x="525" y="128">منخفض</text></g>
+              <g class="zone" data-zone="F"><rect x="245" y="30" width="180" height="150"/><text x="335" y="98">السقالات</text><text class="zone-level" x="335" y="128">منخفض</text></g>
+              <g class="zone" data-zone="C"><rect x="30" y="30" width="200" height="150"/><text x="130" y="98">نطاق الرافعة</text><text class="zone-level" x="130" y="128">منخفض</text></g>
+              <g class="zone" data-zone="A"><rect x="440" y="200" width="170" height="150"/><text x="525" y="268">الحفريات</text><text class="zone-level" x="525" y="298">منخفض</text></g>
+              <g class="zone" data-zone="D"><rect x="245" y="200" width="180" height="150"/><text x="335" y="268">منطقة التشوين</text><text class="zone-level" x="335" y="298">منخفض</text></g>
+              <g class="zone" data-zone="E"><rect x="30" y="200" width="200" height="150"/><text x="130" y="268">المدخل</text><text class="zone-level" x="130" y="298">منخفض</text></g>
+            </g>
+          </svg>
+          <div class="ruler" aria-hidden="true">
+            <div class="ruler__band"><span>حظر العمل تحت الشمس</span></div>
+            <div class="ruler__ticks">
+              <span style="--p:0">06:00</span><span style="--p:16.667">08:00</span><span style="--p:33.333">10:00</span><span style="--p:50">12:00</span><span style="--p:66.667">14:00</span><span style="--p:83.333">16:00</span><span style="--p:100">18:00</span>
+            </div>
+            <div class="ruler__head"></div>
+          </div>
+          <p class="ruler__note">حظر العمل تحت أشعة الشمس: من 12:00 إلى 15:00، من 15 يونيو إلى 15 سبتمبر.</p>
+          <ul class="legend" aria-label="مفتاح الألوان">
+            <li><i class="lv lv--1"></i>منخفض</li><li><i class="lv lv--2"></i>متوسط</li><li><i class="lv lv--3"></i>مرتفع</li><li><i class="lv lv--4"></i>حرج</li>
+          </ul>
+        </figure>
+      </div>
+      <div class="titleblock" aria-hidden="true"><span class="tb-code" dir="ltr">S-06</span><span>مؤشر الخطر</span><span>يقظ</span></div>
+    </section>
+
+    <!-- S-07 · Prototype evidence -->
+    <section class="sheet feed prototype" id="prototype" data-sheet="S-07">
+      <h2>النموذج الأولي يعمل الآن</h2>
+      <p class="section-lede">يعمل النموذج الأولي على حاسب واحد بمعالج رسومي RTX 4070: ثلاث كاميرات في الوقت نفسه، ونموذج رصد مدرّب على ست مجموعات بيانات منشورة بتراخيص مفتوحة، ولوحة إشراف عربية تجمع التنبيهات والمخطط ومؤشر الخطر والتقرير اليومي.</p>
+      <div class="evidence">
+        <figure class="shot shot--wide">
+          <div class="tile__bar"><span dir="ltr">CAM-A</span><span>رصد معدات الوقاية</span></div>
+          <div class="scan"><img src="img/detector.webp" width="1600" height="900" loading="lazy" decoding="async" alt="لقطة من النموذج الأولي: عاملان من الخلف، وحول خوذة أحدهما إطار أخضر بعنوان helmet، وحول السترتين إطاران أصفران بعنوان vest، وإطارات رمادية حول الأشخاص."></div>
+          <figcaption>رصد الخوذة والسترة العاكسة والأشخاص (النسخة الأولى من نموذج الرصد).</figcaption>
+        </figure>
+        <figure class="shot shot--wide">
+          <div class="tile__bar"><span dir="ltr">CAM-B</span><span>منطقة خطر</span></div>
+          <div class="scan"><img src="img/zone-slab-edge.webp" width="1280" height="720" loading="lazy" decoding="async" alt="لقطة من النموذج الأولي: عمّال على سطح بلاطة تحت الإنشاء، ومنطقة خطر حمراء عند الحافة الشرقية، وثلاثة عمّال داخلها موسومون IN DANGER ZONE، وسرعة المعالجة 46.5 إطارًا في الثانية."></div>
+          <figcaption>منطقة خطر عند الحافة الشرقية للبلاطة: 3 عمّال داخلها (لقطة من النسخة الأولى: 46.5 إطارًا في الثانية لكاميرا واحدة دون حدّ للسرعة).</figcaption>
+        </figure>
+        <figure class="shot shot--tall">
+          <div class="tile__bar"><span dir="ltr">CAM-C</span><span>منطقة صبّ</span></div>
+          <div class="scan"><img src="img/zone-pour-area.webp" width="900" height="1600" loading="lazy" decoding="async" alt="لقطة من النموذج الأولي من زاوية علوية: شبكة حديد تسليح، ومنطقة صبّ خرسانة حمراء، وعامل داخلها موسوم IN DANGER ZONE، وعمّال آخرون بإطارات خضراء مع خوذات وسترات."></div>
+          <figcaption>منطقة صبّ الخرسانة: عامل واحد داخلها.</figcaption>
+        </figure>
+        <figure class="shot shot--dash">
+          <div class="tile__bar"><span dir="ltr">PLAN</span><span>لوحة الإشراف: مخطط الموقع</span></div>
+          <div class="scan"><img src="img/dashboard-plan.webp" width="1500" height="940" loading="lazy" decoding="async" alt="لقطة من لوحة إشراف يقظ: مخطط الموقع وعليه مناطق الخطر، ونقاط حمراء لعاملين داخل مناطق محظورة تحيط بها سحابات تنبيه، وجدول بعدد العاملين في كل منطقة، وقائمة بالتنبيهات الأخيرة، وشريط أحمر لتنبيه دخول منطقة خطر."></div>
+          <figcaption>لوحة الإشراف في الموقع التجريبي: مواقع العاملين على المخطط من الكاميرات المعايَرة، وسحابة تنبيه حيث يرصد النظام مخالفة. التنبيهات هنا من المقاطع التجريبية ولا تعني وجود مخالفة فعلية.</figcaption>
+        </figure>
+        <div class="metrics">
+          <table class="schedule schedule--feed">
+            <caption>دقة الرصد (mAP50) على صور اختبار لم يرها النموذج أثناء التدريب</caption>
+            <thead><tr><th scope="col">الفئة</th><th scope="col" dir="ltr">mAP50</th><th scope="col"><span class="visually-hidden">تمثيل بياني</span></th></tr></thead>
+            <tbody>
+              <tr><th scope="row">الخوذة</th><td dir="ltr">0.940</td><td><span class="bar" style="--v:.940"></span></td></tr>
+              <tr><th scope="row">رأس بلا خوذة</th><td dir="ltr">0.908</td><td><span class="bar" style="--v:.908"></span></td></tr>
+              <tr><th scope="row">السترة العاكسة</th><td dir="ltr">0.916</td><td><span class="bar" style="--v:.916"></span></td></tr>
+              <tr><th scope="row">المعدات الثقيلة</th><td dir="ltr">0.867</td><td><span class="bar" style="--v:.867"></span></td></tr>
+              <tr class="row-all"><th scope="row">متوسط الفئات الأربع</th><td dir="ltr">0.908</td><td><span class="bar" style="--v:.908"></span></td></tr>
+            </tbody>
+          </table>
+          <ul class="facts">
+            <li><b>mAP50</b> مقياس شائع لدقة نماذج الرصد، وكلما اقترب من 1 كان الرصد أدق.</li>
+            <li>ثلاثة بثوث فيديو معًا (المقاطع التجريبية الثلاثة تعمل ككاميرات) بمعدل <b dir="ltr">10</b> إطارات في الثانية لكل بث، ويُحلَّل الإطار من لحظة فكّ ترميزه في الحاسب حتى نشر نتائجه في نحو <b dir="ltr">80</b> ملّي ثانية (الوسيط)، دون احتساب تأخير الكاميرا والشبكة.</li>
+            <li>التدريب على <b dir="ltr">13,065</b> صورة استغرق <b dir="ltr">82</b> دقيقة على RTX 4070.</li>
+            <li>الخطوة التالية: تحسين رصد السترة عند العمّال البعيدين عن الكاميرا، واختبار الدقة على مقاطع من موقع إنشاء حقيقي.</li>
+          </ul>
+          <p class="fineprint">البيانات: ست مجموعات منشورة بتراخيص مفتوحة (CC0 وApache-2.0 وCC BY 4.0)، وصور الاختبار منها لم تُستخدم في التدريب. على مجموعة اختبار من مصدر آخر (Construction-PPE) جاءت الدقة أقل: الخوذة <span dir="ltr">0.748</span>، والسترة <span dir="ltr">0.793</span>، والرأس بلا خوذة <span dir="ltr">0.143</span> (صور هذه الفئة هناك ليست من مواقع إنشاء). المقاطع من مكتبة Pexels، والمناطق مرسومة للتوضيح ولا تعني وجود مخالفة فعلية. القياسات بتاريخ 7 أكتوبر 2026.</p>
+        </div>
+      </div>
+      <div class="titleblock" aria-hidden="true"><span class="tb-code" dir="ltr">S-07</span><span>النموذج الأولي</span><span>يقظ</span></div>
+    </section>
+
+    <!-- S-08 · Comparison -->
+    <section class="sheet compare" id="compare" data-sheet="S-08">
+      <h2>ما الذي يميّز يقظ؟</h2>
+      <div class="table-wrap">
+        <table class="schedule cmp">
+          <thead>
+            <tr><th scope="col">الميزة</th><th scope="col">الجولات اليدوية</th><th scope="col">كاميرات المراقبة التقليدية</th><th scope="col">منصات السلامة الذكية الحالية</th><th scope="col" class="cmp__us">يقظ (النموذج الأولي)</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">رصد لحظي للمخالفات</th><td>جزئيًا</td><td>لا</td><td>✔</td><td class="cmp__us">✔</td></tr>
+            <tr><th scope="row">مناطق خطر تُرسم على مخطط الموقع الهندسي</th><td>لا</td><td>لا</td><td>جزئيًا</td><td class="cmp__us">✔</td></tr>
+            <tr><th scope="row">مؤشر خطر لكل منطقة مبني على الحوادث الوشيكة</th><td>لا</td><td>لا</td><td>جزئيًا</td><td class="cmp__us">✔</td></tr>
+            <tr><th scope="row">نداء استغاثة بإشارة من العامل مع رصد السقوط</th><td>لا</td><td>لا</td><td>جزئيًا</td><td class="cmp__us">✔</td></tr>
+            <tr><th scope="row">تنبيه صوتي في الموقع بعدة لغات</th><td>جزئيًا</td><td>لا</td><td>جزئيًا</td><td class="cmp__us">✔</td></tr>
+            <tr><th scope="row">ربط الإجهاد الحراري برصد العمل المكشوف بالكاميرا وقت حظر الظهيرة</th><td>لا</td><td>لا</td><td>جزئيًا</td><td class="cmp__us">✔</td></tr>
+            <tr><th scope="row">جاهزية تجارية ونشر في مواقع فعلية</th><td>لا ينطبق</td><td>✔</td><td>✔</td><td class="cmp__us">نموذج أولي</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="cmp__key">في عمود يقظ: ✔ = منفّذ في النموذج الأولي (7 أكتوبر 2026). الربط مع المعدات محاكاة حتى الآن، ورصد حزام الأمان ينتظر بيانات تدريب.</p>
+      <p class="fineprint">المقارنة مبنية على المواد المنشورة لمنصات مثل viAct وIntenseye وProtex AI (تاريخ الاطلاع: 6 أكتوبر 2026)، وعدم ظهور ميزة في موادها لا يعني غيابها.</p>
+      <div class="titleblock" aria-hidden="true"><span class="tb-code" dir="ltr">S-08</span><span>المقارنة</span><span>يقظ</span></div>
+    </section>
+
+    <!-- S-09 · Programme (Gantt) -->
+    <section class="sheet programme" id="programme" data-sheet="S-09">
+      <h2>البرنامج الزمني حتى النهائي</h2>
+      <div class="gantt">
+        <div class="gantt__axis" aria-hidden="true">
+          <span style="--p:0">أكتوبر</span><span style="--p:38.75">نوفمبر</span><span style="--p:76.25">ديسمبر</span>
+        </div>
+        <ol class="gantt__rows">
+          <li class="gantt__row" style="--s:0;--e:17.5"><span class="gantt__label">النموذج الأولي الأول وتقديم الفكرة</span><span class="gantt__track"><span class="gantt__bar"></span></span><span class="gantt__dates">أكتوبر 2026</span></li>
+          <li class="gantt__row" style="--s:17.5;--e:52.5"><span class="gantt__label">البرنامج الإثرائي والإرشاد، والتجربة على مقاطع مصوّرة في موقع إنشاء حقيقي، وإضافة رصد حزام الأمان</span><span class="gantt__track"><span class="gantt__bar"></span></span><span class="gantt__dates">15 أكتوبر – 11 نوفمبر</span></li>
+          <li class="gantt__row" style="--s:52.5;--e:63.75"><span class="gantt__label">تسليم الحل والنموذج المطوّر مع نتائج مقاسة</span><span class="gantt__track"><span class="gantt__bar"></span></span><span class="gantt__dates">12 – 20 نوفمبر</span></li>
+          <li class="gantt__row" style="--s:63.75;--e:75"><span class="gantt__label">الفرز الثاني</span><span class="gantt__track"><span class="gantt__bar gantt__bar--ext"></span></span><span class="gantt__dates">21 – 29 نوفمبر</span></li>
+          <li class="gantt__row gantt__row--ms" style="--s:92.5;--e:96.25"><span class="gantt__label">العرض النهائي في واجهة الرياض (للفرق المتأهلة)</span><span class="gantt__track"><span class="gantt__bar"></span></span><span class="gantt__dates">14 – 16 ديسمبر</span></li>
+        </ol>
+        <div class="gantt__today" aria-hidden="true"><span>اليوم</span></div>
+      </div>
+      <p class="fineprint">بعد الهاكاثون: تجربة في موقع إنشاء حقيقي، وربط فعلي مع المعدات، والربط مع خدمة الإبلاغ في المجلس الوطني للسلامة والصحة المهنية بالتنسيق معه.</p>
+      <div class="titleblock" aria-hidden="true"><span class="tb-code" dir="ltr">S-09</span><span>البرنامج الزمني</span><span>يقظ</span></div>
+    </section>
+
+    <!-- S-10 · Team as the drawing title block -->
+    <section class="sheet team" id="team" data-sheet="S-10">
+      <h2>الفريق</h2>
+      <table class="tblock">
+        <tbody>
+          <tr><th scope="row">المشروع</th><td>يقظ: منظومة سلامة ذكية لمواقع البناء</td></tr>
+          <tr><th scope="row">المسابقة</th><td>الهاكاثون الهندسي – IECE 2026، المسار الثالث: الابتكار الهندسي، تحدي سلامة مواقع البناء</td></tr>
+          <tr>
+            <th scope="row" rowspan="3">إعداد</th>
+            <td><b>يزيد سلطان المطرف</b>، قائد الفريق ومطوّر الذكاء الاصطناعي
+              <span class="tblock__cv">بكالوريوس علوم الحاسب، جامعة الطائف (2026). المركز الثالث في هاكاثون AgentX (مشروع «سياق»). قائد فريق مشروع «مطابق» في بلدياثون 2026. مشروع التخرج «Hand Talker» لترجمة لغة الإشارة إلى نص بالرؤية الحاسوبية.</span></td>
+          </tr>
+          <tr><td><b>ريم</b> <span class="todo">✍️ الاسم الكامل والتخصص والدور</span></td></tr>
+          <tr><td><b>عبدالله</b> <span class="todo">✍️ الاسم الكامل والتخصص والدور</span></td></tr>
+          <tr><th scope="row">التاريخ</th><td>أكتوبر 2026</td></tr>
+          <tr><th scope="row">التواصل</th><td><span class="todo">✍️ البريد أو رقم الجوال</span></td></tr>
+        </tbody>
+      </table>
+      <div class="titleblock" aria-hidden="true"><span class="tb-code" dir="ltr">S-10</span><span>الفريق</span><span>يقظ</span></div>
+    </section>
+
+    <!-- Closing -->
+    <section class="closing" id="closing" data-sheet="S-11">
+      <p class="closing__line">يقظ.. لأن كل عامل يستحق أن يعود إلى بيته سالمًا</p>
+      <div class="refs">
+        <h2>المراجع</h2>
+        <ol>
+          <li><a href="https://www.okaz.com.sa/economy/saudi/2158203" rel="noopener">إصابات العمل 2023، المؤسسة العامة للتأمينات الاجتماعية عبر صحيفة عكاظ</a></li>
+          <li><a href="https://www.bls.gov/news.release/cfoi.nr0.htm" rel="noopener">Census of Fatal Occupational Injuries 2024، مكتب إحصاءات العمل الأمريكي</a></li>
+          <li><a href="https://www.ilo.org/topics-and-sectors/safety-and-health-work" rel="noopener">السلامة والصحة في العمل، منظمة العمل الدولية</a></li>
+          <li><a href="https://www.hrsd.gov.sa/media-center/news/%D8%AA%D8%B7%D8%A8%D9%8A%D9%82-%D9%82%D8%B1%D8%A7%D8%B1-%D8%AD%D8%B8%D8%B1-%D8%A7%D9%84%D8%B9%D9%85%D9%84-%D8%AA%D8%AD%D8%AA-%D8%A3%D8%B4%D8%B9%D8%A9-%D8%A7%D9%84%D8%B4%D9%85%D8%B3" rel="noopener">قرار حظر العمل تحت أشعة الشمس، وزارة الموارد البشرية والتنمية الاجتماعية</a></li>
+          <li><a href="https://ncosh.gov.sa/ar/services/occupational-incident-reporting-and-investigation-service" rel="noopener">خدمة إدارة البلاغات والتحقيق في حوادث وإصابات العمل، المجلس الوطني للسلامة والصحة المهنية</a></li>
+          <li><a href="https://sbc.gov.sa/ar/BC/Documents/tableofcontent2024/SBC%20201/SBC201_CC_241224-FA.pdf" rel="noopener">كود البناء السعودي SBC 201-2024</a></li>
+          <li><a href="https://laws.boe.gov.sa/boelaws/laws/lawdetails/b7cfae89-828e-4994-b167-adaa00e37188/1" rel="noopener">نظام حماية البيانات الشخصية</a></li>
+          <li><a href="https://docs.ultralytics.com/datasets/detect/construction-ppe" rel="noopener">بيانات Construction-PPE، Ultralytics</a></li>
+          <li>المقاطع: <a href="https://www.pexels.com/video/workers-walking-in-construction-site-5434223/" rel="noopener">Everett Bumstead</a>، <a href="https://www.pexels.com/video/workers-on-construction-11798561/" rel="noopener">manas patra</a>، <a href="https://www.pexels.com/video/construction-workers-on-building-site-35631533/" rel="noopener">SÀI GÒN CÔNG TY CP SẢN XUẤT - THƯƠNG MẠI</a> (Pexels)</li>
+        </ol>
+      </div>
+      <p class="disclaimer">صفحة تعريفية بمشروع فريق مشارك في الهاكاثون الهندسي، وليست موقعًا رسميًا للهيئة السعودية للمهندسين أو للمؤتمر الهندسي الدولي.</p>
+    </section>
+  </main>
+
+</body>
+</html>

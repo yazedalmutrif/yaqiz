@@ -1,0 +1,46 @@
+{
+  "generated_utc": "2026-10-07T10:40:40.513534+00:00",
+  "det_conf": 0.35,
+  "imgsz": 960,
+  "frames_per_clip": 6,
+  "models": {
+    "v1": "models/ppe_yolo11s_best.pt",
+    "v2": "models/ppe_v2.pt"
+  },
+  "clips": {
+    "CAM-01 slab edge": {
+      "file": "data/videos/pexels_11798561.mp4",
+      "v1_detections": {
+        "vest": 35,
+        "helmet": 33
+      },
+      "v2_detections": {
+        "helmet": 41,
+        "vest": 14,
+        "head": 1
+      }
+    },
+    "CAM-02 pour (portrait)": {
+      "file": "data/videos/derived/pexels_35631533_720p.mp4",
+      "v1_detections": {
+        "vest": 24,
+        "helmet": 18
+      },
+      "v2_detections": {
+        "vest": 11,
+        "helmet": 32
+      }
+    },
+    "CAM-03 entrance": {
+      "file": "data/videos/derived/pexels_5434223_720p.mp4",
+      "v1_detections": {
+        "vest": 12,
+        "helmet": 8
+      },
+      "v2_detections": {
+        "vest": 12,
+        "helmet": 7
+      }
+    }
+  }
+}

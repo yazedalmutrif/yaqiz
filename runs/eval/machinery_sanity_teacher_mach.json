@@ -1,0 +1,47 @@
+{
+  "weights": "runs/ppe_v2/teacher_mach/weights/best.pt",
+  "det_conf": 0.35,
+  "imgsz": 960,
+  "machine_gap": 1.0,
+  "worker_photo_test_sets": {
+    "hardhat_xie": {
+      "images": 1766,
+      "images_with_machinery_box": 1334,
+      "machinery_boxes": 1860
+    },
+    "gdut_hwd": {
+      "images": 500,
+      "images_with_machinery_box": 352,
+      "machinery_boxes": 470
+    },
+    "chvg": {
+      "images": 255,
+      "images_with_machinery_box": 186,
+      "machinery_boxes": 264
+    },
+    "rf100_construction_safety": {
+      "images": 90,
+      "images_with_machinery_box": 64,
+      "machinery_boxes": 90
+    },
+    "cppe_test": {
+      "images": 141,
+      "images_with_machinery_box": 98,
+      "machinery_boxes": 135
+    }
+  },
+  "machine_test_sets": {
+    "rf100_excavators": {
+      "images": 96,
+      "images_with_person_and_machine": 4,
+      "persons_near": 0,
+      "persons_not_near": 4
+    },
+    "kr_site_machinery": {
+      "images": 566,
+      "images_with_person_and_machine": 55,
+      "persons_near": 32,
+      "persons_not_near": 28
+    }
+  }
+}

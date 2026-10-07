@@ -1,0 +1,27 @@
+# Install torch + torchvision FIRST from the PyTorch CUDA index (see README):
+#   .venv\Scripts\python -m pip install torch==2.14.1 torchvision==0.29.1 --index-url https://download.pytorch.org/whl/cu130
+# Then:  .venv\Scripts\python -m pip install -r requirements.txt
+#
+# Versions below are the ones tested on 2026-10-06 (Windows 11, Python 3.10.11, RTX 4070).
+torch==2.14.1
+torchvision==0.29.1
+ultralytics==8.4.173
+shapely==2.1.2
+lap==0.5.13            # linear assignment used by ByteTrack
+opencv-python==5.0.0.93
+numpy==2.2.6
+PyYAML==6.0.3
+pytest==9.1.1
+
+# Yaqiz server (yaqiz/), tested 2026-10-07
+fastapi==0.142.2
+uvicorn==0.54.0
+websockets==16.1.1      # WebSocket support for uvicorn (/api/ws)
+python-multipart==0.0.32  # site-plan upload
+sqlmodel==0.0.48
+pydantic==2.13.5
+pydantic-settings==2.15.0
+httpx==0.28.1           # Open-Meteo weather + tests
+pillow==12.3.0          # data scripts (EXIF checks)
+edge-tts==7.2.8         # only for `python -m yaqiz voices` (needs internet once)
+paho-mqtt==2.1.0        # only if YAQIZ_MQTT_URL is set (simulated interlock otherwise)
