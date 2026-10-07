@@ -58,7 +58,7 @@ cd C:\Users\yazed\Projects\SiteSafety
 
 ## Run it on another PC (Windows)
 
-1. Unzip `Yaqiz-source-2026-10-07.zip` anywhere.
+1. Download `Yaqiz-source-2026-10-07.zip` from the repository's Releases page on GitHub and unzip it anywhere, or `git clone` the repository.
 2. Install Python 3.10 (python.org) if the PC does not have it.
 3. Double-click `setup_windows.bat`. This is one-time and needs internet: it installs PyTorch and the packages, then builds the demo site.
 4. Double-click `run_dashboard.bat`. The dashboard opens at http://127.0.0.1:8000.
@@ -67,16 +67,16 @@ cd C:\Users\yazed\Projects\SiteSafety
 **Requirements:** an NVIDIA GPU gives the real speed; without one, Yaqiz still runs, but slowly.
 
 **Demo clips are not included.** Either:
-- download them by hand from the Pexels links in `MEDIA_SOURCES.md` into `dataideos\`, then run `.venv\Scripts\python -m yaqiz seed --reset`; or
+- download them by hand from the Pexels links in `MEDIA_SOURCES.md` into `data\videos\`, then run `.venv\Scripts\python -m yaqiz seed --reset`; or
 - add a webcam (source `0`) or a phone camera on the Settings page.
 
 ## Run it on a Mac
 
 **Needs:** an Apple Silicon Mac (M1 or newer) with macOS 14 Sonoma or newer. The PyTorch version Yaqiz uses has no build for Intel Macs. Yaqiz uses the Mac's GPU (Apple MPS).
 
-1. Unzip `Yaqiz-source-2026-10-07.zip`.
+1. Download `Yaqiz-source-2026-10-07.zip` from the repository's Releases page on GitHub and unzip it, or `git clone` the repository.
 2. Install Python 3.10–3.13 from python.org if the Mac does not have it.
-3. Open **Terminal**, type `cd ` (with a space), drag the unzipped `Yaqiz` folder into the window and press Enter.
+3. Open **Terminal**, type `cd ` (with a space), drag the project folder into the window (`Yaqiz` if you unzipped it, `yaqiz` if you cloned it) and press Enter.
 4. Run `bash setup_mac.command`. This is one-time and needs internet.
 5. Run `bash run_dashboard.command`. The dashboard opens at http://127.0.0.1:8000.
 6. To see the landing page, run `bash run_landing.command` in a second Terminal window. It opens http://127.0.0.1:4180.
