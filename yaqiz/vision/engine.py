@@ -88,16 +88,21 @@ def cuda_gpu_supported(torch) -> bool:  # noqa: ANN001
     if not archs:
         return True                   # the build does not say; let PyTorch try
     cap = major * 10 + minor
-    for arch in archs:                # e.g. "sm_86", "sm_90a", "compute_90"
-        kind, _, num = arch.partition("_")
-        num = num.rstrip("abcdefghijklmnopqrstuvwxyz")
+    for arch in archs:                # e.g. "sm_86", "sm_90a", "sm_100f", "compute_90"
+        kind, _, rest = arch.partition("_")
+        num = rest.rstrip("abcdefghijklmnopqrstuvwxyz")
+        suffix = rest[len(num):]
         if not num.isdigit():
             continue
         n = int(num)
-        if kind == "sm" and n // 10 == major and n <= cap:
-            return True               # machine code for this GPU generation
-        if kind == "compute" and n <= cap:
-            return True               # PTX that the driver can compile for this GPU
+        if suffix == "a":
+            ok = n == cap                           # architecture-specific: this exact GPU only
+        elif kind == "sm" or suffix == "f":
+            ok = n // 10 == major and n <= cap      # machine code or family PTX: same major, same or newer minor
+        else:
+            ok = kind == "compute" and n <= cap     # plain PTX: the driver compiles it for any newer GPU
+        if ok:
+            return True
     return False
 
 

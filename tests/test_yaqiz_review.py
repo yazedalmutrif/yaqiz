@@ -245,6 +245,13 @@ def test_pick_device_falls_back_to_cpu_on_a_gpu_this_pytorch_build_cannot_run(mo
     monkeypatch.setattr(torch.cuda, "get_arch_list", lambda: ["sm_90", "compute_90"])      # PTX: newer GPUs run
     monkeypatch.setattr(torch.cuda, "get_device_capability", lambda i=0: (13, 0))
     assert pick_device(s) == 0
+    # "a" targets run only on that exact GPU; "f" (family) targets only within the same major version
+    suffixed = [(["sm_90a"], (9, 0), 0), (["sm_100a"], (10, 3), "cpu"), (["compute_90a"], (12, 0), "cpu"),
+                (["compute_100f"], (10, 3), 0), (["compute_100f"], (12, 0), "cpu"), (["sm_120f"], (12, 1), 0)]
+    for archs, cap, expected in suffixed:
+        monkeypatch.setattr(torch.cuda, "get_arch_list", lambda a=archs: a)
+        monkeypatch.setattr(torch.cuda, "get_device_capability", lambda i=0, c=cap: c)
+        assert pick_device(s) == expected, (archs, cap)
 
     def unqueryable(i=0):
         raise RuntimeError("CUDA error: no kernel image is available for execution on the device")

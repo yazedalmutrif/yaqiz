@@ -64,7 +64,7 @@ cd C:\Users\yazed\Projects\SiteSafety
 4. Double-click `run_dashboard.bat`. The dashboard opens at http://127.0.0.1:8000.
 5. Double-click `run_landing.bat`. The landing page opens at http://127.0.0.1:4180.
 
-If Windows shows "Windows protected your PC" when you open a `.bat` file from the downloaded zip, click **More info** → **Run anyway**. To avoid this, right-click the zip before unzipping it → **Properties** → tick **Unblock** → **OK**.
+If Windows shows "Windows protected your PC" when you open a `.bat` file from the downloaded zip, click **More info** → **Run anyway**. To avoid this, right-click the zip before unzipping it → **Properties** → tick **Unblock** → **OK**. On Windows 11 with Smart App Control turned on, the message says "Smart App Control blocked…" and has no Run anyway option: unblock the zip as above before unzipping it, or get the code with `git clone` (cloned files are not marked as downloaded).
 
 **Requirements:** for the real speed, an NVIDIA GPU from the GTX 16 or RTX 20 series or newer, with NVIDIA driver 580 or newer (update the driver from nvidia.com if it is older). Without such a GPU, Yaqiz runs on the processor, which works but is slow. This includes older NVIDIA GPUs (GTX 10 series, MX150–MX350 and earlier), which the PyTorch version Yaqiz uses does not support.
 
